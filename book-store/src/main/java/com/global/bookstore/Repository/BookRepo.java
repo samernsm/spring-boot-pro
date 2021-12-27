@@ -8,8 +8,8 @@ import com.global.bookstore.entity.Book;
 @Repository
 public interface BookRepo  extends JpaRepository<Book, Long> {
 
-	public Book findByName(String name);
+	//public Book findByName(String name);
 	
-	public Book findByPrice(Double  price);
+	//public Book findByPrice(Double  price);
   
 }

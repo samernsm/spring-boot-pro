@@ -1,16 +1,32 @@
 package com.global.bookstore.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Table( name = "book")
 @Entity
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id ;
     private String Name;
     private Double price;
+	
+    @ManyToOne
+    @JoinColumn(name = "auther_id")
+    private Auther auther;
+    
+    
+    
+    
+    
 	public Long getId() {
 		return id;
 	}
@@ -29,7 +45,12 @@ public class Book {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-    
+	public Auther getAuther() {
+		return auther;
+	}
+	public void setAuther(Auther auther) {
+		this.auther = auther;
+	}
     
 
 

@@ -18,12 +18,10 @@ public class BookService {
     	
     }
 	
-	public Book findByName(String name) {
-		return bookRepo.findByName(name);
-	}
-
-	public Book findByPrice(Double price) {
-		 return bookRepo.findByPrice(price);
-	}
+	/*
+	 * public Book findByName(String name) { return bookRepo.findByName(name); }
+	 * 
+	 * public Book findByPrice(Double price) { return bookRepo.findByPrice(price); }
+	 */
 
 }
