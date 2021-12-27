@@ -41,7 +41,7 @@ public class AutherService {
 		
 		return autherRepo.save(auther);
 	}
-	
+	//del
 	public void delete(Long id) {
 		autherRepo.deleteById(id);
 		
