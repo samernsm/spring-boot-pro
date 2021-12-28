@@ -1,15 +1,19 @@
 package com.global.bookstore.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
 
+@NamedEntityGraph(name = "loadAuther",attributeNodes = @NamedAttributeNode("auther"))
 @Table( name = "book")
 @Entity
 public class Book {
@@ -19,7 +23,7 @@ public class Book {
     private String Name;
     private Double price;
 	
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "auther_id")
     private Auther auther;
     

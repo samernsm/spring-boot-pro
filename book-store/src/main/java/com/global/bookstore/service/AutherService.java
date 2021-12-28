@@ -34,6 +34,12 @@ public class AutherService {
 		return autherRepo.save(entity);
 	}
 
+	
+	public List<Auther> insertAll(List<Auther> entity) {
+				 
+		return autherRepo.saveAll(entity);
+	}
+	
 	public Auther update(Auther entity) {
 		Auther auther = findById(entity.getId());
 		

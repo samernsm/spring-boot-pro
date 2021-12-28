@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.global.bookstore.Repository.AutherRepo;
 import com.global.bookstore.entity.Auther;
 import com.global.bookstore.service.AutherService;
 
