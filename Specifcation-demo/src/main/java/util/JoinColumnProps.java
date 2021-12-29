@@ -1,4 +1,4 @@
-package entity;
+package util;
 
 public class JoinColumnProps {
     private String joinColumnName;

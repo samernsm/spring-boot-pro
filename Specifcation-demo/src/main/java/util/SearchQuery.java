@@ -1,4 +1,4 @@
-package entity;
+package util;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ public class SearchQuery {
 
 	private List<SearchFilter> searchFilter;
 	
-	private Long pageNumber;
-	private Long pageSize;
+	private int pageNumber;
+	private int pageSize;
 	
 	private SortOrder sortOrder;
 	
@@ -21,19 +21,19 @@ public class SearchQuery {
 		this.searchFilter = searchFilter;
 	}
 
-	public Long getPageNumber() {
+	public int getPageNumber() {
 		return pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(int pageNumber) {
 		this.pageNumber = pageNumber;
 	}
 
-	public Long getPageSize() {
+	public int getPageSize() {
 		return pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
 
