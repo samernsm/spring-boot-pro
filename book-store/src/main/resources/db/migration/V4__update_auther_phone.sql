@@ -1,0 +1,1 @@
+update authers set phone_number = '010' where phone_number is null;
