@@ -1,6 +1,5 @@
 package com.global.bookstore.config;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,45 +16,46 @@ public class Startup implements CommandLineRunner {
 
 	@Autowired
 	private AutherService autherService;
-	
+
 	@Autowired
 	private BookService bookService;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
+
+		// adding some data for authers
+		if (autherService.findAll().isEmpty()) {
 		Auther auther1 = new Auther();
-		auther1.setName("ali");
-	
+		auther1.setFullName("ALi");
+
 		Auther auther2 = new Auther();
-		auther2.setName("moh");
-	
+		auther2.setFullName("Mohamed");
+
 		Auther auther3 = new Auther();
-		auther3.setName("said");
-		
-		autherService.insertAll(Arrays.asList(auther1,auther2,auther3));
-	
-	    //------------------book-----------------
-		
-		Book book1 = new Book();
-		book1.setName("java");
-	    book1.setPrice(200.0);
-		book1.setAuther(autherService.findById(1L));
-	    
-	    
+		auther3.setFullName("Ahmed");
+
+		autherService.insertAll(Arrays.asList(auther1, auther2, auther3));
+		}
+		// adding some data for books
+		if(bookService.findAll().isEmpty()) {
+		Book book = new Book();
+		book.setName("Java JPA");
+		book.setPrice(200);
+		book.setAuther(autherService.getById(1L));
+
 		Book book2 = new Book();
-		book2.setName("c#");
-		book2.setPrice(300.0);
-		book2.setAuther(autherService.findById(1L));
-		
-		
+		book2.setName("Data Base Mysql");
+		book2.setPrice(300);
+		book2.setAuther(autherService.getById(1L));
+
 		Book book3 = new Book();
-		book3.setName("python");
-		book3.setPrice(400.0);
-		book3.setAuther(autherService.findById(2L)); 
-		
-	    bookService.insertAll(Arrays.asList(book1,book2,book3));
-	
+		book3.setName("Python");
+		book3.setPrice(120);
+		book3.setAuther(autherService.findById(2L));
+
+
+		bookService.insertAll(Arrays.asList(book,book2, book3));
+		}
 	}
 
 }

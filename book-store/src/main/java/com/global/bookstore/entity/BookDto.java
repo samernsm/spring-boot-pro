@@ -1,35 +1,55 @@
 package com.global.bookstore.entity;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class BookDto {
 	
-	private Long id ;
-    private String Name;
-    private Double price;
-	private Auther auther;    
-    
-	public Auther getAuther() {
-		return auther;
-	}
-	public void setAuther(Auther auther) {
-		this.auther = auther;
-	}
+	private Long id;
+	
+	@NotBlank
+	private String name ;
+	
+	@Min(value = 5)
+	@Max(value = 5000)
+	private double price;
+	
+	@NotNull
+	private Auther auther;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
-		return Name;
+		return name;
 	}
+
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-	public Double getPrice() {
+
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(Double price) {
+
+	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public Auther getAuther() {
+		return auther;
+	}
+
+	public void setAuther(Auther auther) {
+		this.auther = auther;
+	}
+
 	
 }
